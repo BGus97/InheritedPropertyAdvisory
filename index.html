@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inherited Property Advisory by Brendan Gustafson | Kentwood Real Estate City Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #2C3E5A;
+      --navy-light: #3D5275;
+      --slate: #4A6080;
+      --slate-light: #6B84A0;
+      --gray-line: #E4E8ED;
+      --gray-soft: #F5F6F8;
+      --gray-text: #7A8899;
+      --white: #FFFFFF;
+      --text-dark: #1A2432;
+      --text-body: #3A4A5C;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text-body);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-line);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+    }
+
+    /* ── SHARED LAYOUT ──────────────────────────────── */
+    section {
+      padding: 100px 2rem;
+    }
+
+    .inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .inner-wide {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--slate-light);
+      margin: 2rem 0;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+      margin-bottom: 1.25rem;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      color: var(--text-dark);
+      line-height: 1.2;
+    }
+
+    p {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.8;
+    }
+
+    /* ── BUTTONS ────────────────────────────────────── */
+    .btn-primary {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-light);
+      border-color: var(--navy-light);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid var(--navy);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────── */
+    #hero {
+      padding-top: 80px;
+      padding-bottom: 120px;
+      background: var(--white);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+      margin-bottom: 1.5rem;
+    }
+
+    #hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 3vw, 1.55rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--slate);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+
+    .hero-credit {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── INTRO ──────────────────────────────────────── */
+    #intro {
+      background: var(--gray-soft);
+      border-top: 1px solid var(--gray-line);
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    .intro-name {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+
+    .intro-title {
+      font-size: 0.82rem;
+      color: var(--gray-text);
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+    }
+
+    /* ── WHO THIS IS FOR ────────────────────────────── */
+    #who {
+      background: var(--white);
+    }
+
+    #who h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      font-size: 1rem;
+      color: var(--text-body);
+    }
+
+    .check-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      border: 1.5px solid var(--slate-light);
+      border-radius: 50%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%234A6080' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;
+    }
+
+    /* ── PROCESS ────────────────────────────────────── */
+    #process {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    #process .section-label {
+      color: rgba(255,255,255,0.45);
+    }
+
+    #process h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.3);
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+
+    .step-desc {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── ADVISORS ───────────────────────────────────── */
+    #advisors {
+      background: var(--gray-soft);
+      border-top: 1px solid var(--gray-line);
+      border-bottom: 1px solid var(--gray-line);
+    }
+
+    #advisors h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      line-height: 1.25;
+    }
+
+    .advisor-quote {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--slate);
+      border-left: 2px solid var(--slate-light);
+      padding-left: 1.5rem;
+      line-height: 1.75;
+    }
+
+    /* ── TESTIMONIAL ────────────────────────────────── */
+    #testimonial {
+      background: var(--white);
+      border-top: 1px solid var(--gray-line);
+    }
+
+    .testimonial-context {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      quotes: none;
+    }
+
+    .testimonial-attribution {
+      font-size: 0.82rem;
+      color: var(--gray-text);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── DOWNLOAD ───────────────────────────────────── */
+    #download {
+      background: var(--white);
+      text-align: center;
+    }
+
+    #download h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: 1rem;
+    }
+
+    #download p {
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      color: var(--gray-text);
+    }
+
+    /* ── CONTACT ────────────────────────────────────── */
+    #contact {
+      background: var(--gray-soft);
+      border-top: 1px solid var(--gray-line);
+    }
+
+    #contact h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+
+    #contact .sub {
+      font-size: 0.95rem;
+      color: var(--gray-text);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-details {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .contact-detail {
+      font-size: 0.9rem;
+      color: var(--slate);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .contact-detail svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--slate-light);
+      flex-shrink: 0;
+    }
+
+    .contact-detail a {
+      color: var(--slate);
+      text-decoration: none;
+    }
+
+    .contact-detail a:hover {
+      color: var(--navy);
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.55);
+      padding: 3.5rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-role {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2rem;
+    }
+
+    .footer-legal {
+      font-size: 0.78rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.5rem;
+    }
+
+    .footer-legal p + p {
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 540px) {
+      section { padding: 72px 1.5rem; }
+      #hero { padding-top: 120px; padding-bottom: 80px; }
+      .btn-group { flex-direction: column; }
+      .btn-primary, .btn-outline { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">Inherited Property Advisory &middot; Brendan Gustafson</span>
+    <ul class="nav-links">
+      <li><a href="#who">Who It's For</a></li>
+      <li><a href="#process">The Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- COMPLIANCE BAR -->
+  <div style="margin-top:64px; background:var(--gray-soft); border-bottom:1px solid var(--gray-line); text-align:center; padding:6px 1rem; font-size:0.68rem; letter-spacing:0.05em; color:var(--gray-text); font-family:var(--sans);">
+    Real estate services provided by Kentwood Real Estate City Properties
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="inner">
+      <p class="hero-eyebrow">A specialized real estate advisory</p>
+      <h1>Inherited Property Advisory</h1>
+      <p class="hero-sub">A clear plan for your inherited property—so you can move forward with confidence.</p>
+      <p class="hero-credit">Brendan Gustafson, Broker Associate with Kentwood Real Estate City Properties</p>
+      <div class="btn-group">
+        <a href="#download" class="btn-primary">Download the Estate Exit Plan</a>
+        <a href="#contact" class="btn-outline">Schedule a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section id="intro">
+    <div class="inner">
+      <p class="section-label">About</p>
+      <p class="intro-name">Brendan Gustafson</p>
+      <p class="intro-title">Broker Associate &nbsp;|&nbsp; Kentwood Real Estate City Properties</p>
+      <p>I specialize in helping families navigate inherited property—providing clear guidance on the real estate side and executing the right plan from start to finish.</p>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who">
+    <div class="inner">
+      <p class="section-label">Who This Is For</p>
+      <h2>You may be in the right place if&hellip;</h2>
+      <ul class="check-list">
+        <li>You've inherited a home and aren't sure what to do next</li>
+        <li>Multiple heirs are involved</li>
+        <li>The property needs repairs or hasn't been updated</li>
+        <li>You're out of state</li>
+        <li>You need a clear plan—not guesswork</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="inner">
+      <p class="section-label">The Process</p>
+      <h2>The Estate Exit Plan</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <p class="step-title">Clarify the Situation</p>
+            <p class="step-desc">Understand the real estate situation, decision-makers, property status, and goals of all parties involved.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <p class="step-title">Evaluate the Property</p>
+            <p class="step-desc">Assess condition, market positioning, and what—if any—preparation makes sense before a sale.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <p class="step-title">Compare Your Options</p>
+            <p class="step-desc">Review realistic real estate paths: traditional sale, as-is sale, investor offer, or preparing the home before listing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <p class="step-title">Build the Strategy</p>
+            <p class="step-desc">Align on the best approach given timing, condition, market conditions, and stakeholder priorities.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div>
+            <p class="step-title">Execute the Sale</p>
+            <p class="step-desc">Handle all details of the transaction—from listing or off-market sale through a clean closing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVISORS -->
+  <section id="advisors">
+    <div class="inner">
+      <p class="section-label">Working with Advisors</p>
+      <h2>Working alongside your attorney and CPA</h2>
+      <blockquote class="advisor-quote">
+        Inherited property often involves legal and financial considerations.<br><br>
+        I do not provide legal, tax, or financial advice, but I can coordinate with your professional advisors to keep the real estate process moving clearly and efficiently.
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section id="testimonial">
+    <div class="inner">
+      <p class="section-label">Client Experience</p>
+      <p class="testimonial-context">After helping Steve and his siblings sell the home they inherited from their mother:</p>
+      <blockquote class="testimonial-quote">
+        "Brendan is a person I can trust and depend on. He goes above and beyond to help make these situations as stress-free as possible. If there was something I didn't understand, he would take his time to explain it. He is quick to respond to my phone calls, texts, and emails. I would highly recommend Brendan Gustafson as a realtor."
+      </blockquote>
+      <p class="testimonial-attribution">— Steve M.</p>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section id="download">
+    <div class="inner-wide">
+      <p class="section-label" style="text-align:center;">Free Resource</p>
+      <h2>Get the Estate Exit Plan</h2>
+      <p>A simple guide to help you organize the real estate side of an inherited property and move forward with confidence.</p>
+      <a href="#" class="btn-primary">Download the Guide</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="inner">
+      <p class="section-label">Get in Touch</p>
+      <h2>Need help with an inherited property?</h2>
+      <p class="sub">Talk through your situation with Brendan Gustafson.</p>
+      <a href="#" class="btn-primary">Schedule a Call</a>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l.57-.57a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          <a href="tel:7202349375">720-234-9375</a>
+        </div>
+        <div class="contact-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:bgustafson@kentwood.com">bgustafson@kentwood.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">Brendan Gustafson</p>
+      <p class="footer-role">Broker Associate &nbsp;·&nbsp; Kentwood Real Estate City Properties</p>
+      <div class="footer-legal">
+        <p>Inherited Property Advisory is a specialized real estate service offered by Brendan Gustafson, Broker Associate with Kentwood Real Estate City Properties. It is not a separate real estate brokerage. All real estate brokerage services are provided through Kentwood Real Estate City Properties.</p>
+        <p>This site does not provide legal, tax, or financial advice. Please consult your attorney, CPA, or financial advisor regarding your situation.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

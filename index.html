@@ -1,19 +1,73 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inherited Property Advisory by Brendan Gustafson | Kentwood Real Estate City Properties</title>
+  <meta name="description" content="Specialized real estate guidance for families navigating inherited property in Colorado. Brendan Gustafson, Broker Associate with Kentwood Real Estate City Properties." />
+  <link rel="canonical" href="https://inheritedpropertyadvisory.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Inherited Property Advisory | Brendan Gustafson" />
+  <meta property="og:description" content="Specialized real estate guidance for families navigating inherited property in Colorado. Clear plan. Trusted execution." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://inheritedpropertyadvisory.com/" />
+  <meta property="og:site_name" content="Inherited Property Advisory" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Inherited Property Advisory | Brendan Gustafson" />
+  <meta name="twitter:description" content="Specialized real estate guidance for families navigating inherited property in Colorado." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+
+  <!-- Structured Data: RealEstateAgent + ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["RealEstateAgent", "ProfessionalService"],
+    "name": "Inherited Property Advisory",
+    "description": "Specialized real estate guidance for families navigating inherited property decisions in Colorado, including probate sales, as-is sales, and estate coordination.",
+    "url": "https://inheritedpropertyadvisory.com",
+    "telephone": "+1-720-234-9375",
+    "email": "bgustafson@kentwood.com",
+    "areaServed": {
+      "@type": "State",
+      "name": "Colorado"
+    },
+    "serviceType": "Inherited Property Real Estate Advisory",
+    "employee": {
+      "@type": "Person",
+      "name": "Brendan Gustafson",
+      "jobTitle": "Broker Associate",
+      "telephone": "+1-720-234-9375",
+      "email": "bgustafson@kentwood.com",
+      "worksFor": {
+        "@type": "RealEstateAgent",
+        "name": "Kentwood Real Estate City Properties"
+      }
+    },
+    "parentOrganization": {
+      "@type": "RealEstateAgent",
+      "name": "Kentwood Real Estate City Properties"
     }
+  }
+  </script>
+
+  <!-- Structured Data: WebSite with sitelinks search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Inherited Property Advisory",
+    "url": "https://inheritedpropertyadvisory.com"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy: #2C3E5A;
@@ -41,7 +95,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAV ─────────────────────────────────────────── */
+    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -55,7 +109,6 @@
       align-items: center;
       justify-content: space-between;
     }
-
     .nav-brand {
       font-family: var(--serif);
       font-size: 1.05rem;
@@ -63,13 +116,7 @@
       color: var(--navy);
       letter-spacing: 0.02em;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
       font-size: 0.8rem;
       font-weight: 400;
@@ -79,24 +126,14 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
     .nav-links a:hover { color: var(--navy); }
+    @media (max-width: 640px) { .nav-links { display: none; } }
 
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-    }
-
-    /* ── SHARED LAYOUT ──────────────────────────────── */
+    /* ── SHARED LAYOUT ── */
     section { padding: 100px 2rem; }
-
     .inner { max-width: 680px; margin: 0 auto; }
     .inner-wide { max-width: 860px; margin: 0 auto; }
-
-    .divider {
-      width: 40px; height: 1px;
-      background: var(--slate-light);
-      margin: 2rem 0;
-    }
+    .divider { width: 40px; height: 1px; background: var(--slate-light); margin: 2rem 0; }
 
     .section-label {
       font-family: var(--sans);
@@ -107,20 +144,10 @@
       color: var(--slate-light);
       margin-bottom: 1.25rem;
     }
+    h1, h2, h3 { font-family: var(--serif); color: var(--text-dark); line-height: 1.2; }
+    p { font-size: 1.02rem; color: var(--text-body); line-height: 1.8; }
 
-    h1, h2, h3 {
-      font-family: var(--serif);
-      color: var(--text-dark);
-      line-height: 1.2;
-    }
-
-    p {
-      font-size: 1.02rem;
-      color: var(--text-body);
-      line-height: 1.8;
-    }
-
-    /* ── BUTTONS ────────────────────────────────────── */
+    /* ── BUTTONS ── */
     .btn-primary {
       display: inline-block;
       padding: 0.85rem 2rem;
@@ -136,12 +163,7 @@
       transition: background 0.2s, color 0.2s;
       cursor: pointer;
     }
-
-    .btn-primary:hover {
-      background: var(--navy-light);
-      border-color: var(--navy-light);
-    }
-
+    .btn-primary:hover { background: var(--navy-light); border-color: var(--navy-light); }
     .btn-outline {
       display: inline-block;
       padding: 0.85rem 2rem;
@@ -157,302 +179,91 @@
       transition: background 0.2s, color 0.2s;
       cursor: pointer;
     }
+    .btn-outline:hover { background: var(--navy); color: var(--white); }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
 
-    .btn-outline:hover {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-
-    /* ── HERO ───────────────────────────────────────── */
-    #hero {
-      padding-top: 80px;
-      padding-bottom: 120px;
-      background: var(--white);
-    }
-
+    /* ── HERO ── */
+    #hero { padding-top: 80px; padding-bottom: 120px; background: var(--white); }
     .hero-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--slate-light);
-      margin-bottom: 1.5rem;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--slate-light); margin-bottom: 1.5rem;
     }
-
     #hero h1 {
       font-size: clamp(2.6rem, 6vw, 4.2rem);
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      color: var(--text-dark);
-      margin-bottom: 1.25rem;
+      font-weight: 300; letter-spacing: -0.01em;
+      color: var(--text-dark); margin-bottom: 1.25rem;
     }
-
     .hero-sub {
       font-family: var(--serif);
       font-size: clamp(1.2rem, 3vw, 1.55rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--slate);
-      margin-bottom: 1rem;
-      line-height: 1.4;
+      font-weight: 300; font-style: italic;
+      color: var(--slate); margin-bottom: 1rem; line-height: 1.4;
     }
+    .hero-credit { font-size: 0.85rem; color: var(--gray-text); font-weight: 300; letter-spacing: 0.02em; }
 
-    .hero-credit {
-      font-size: 0.85rem;
-      color: var(--gray-text);
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
+    /* ── INTRO ── */
+    #intro { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
+    .intro-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--text-dark); margin-bottom: 0.25rem; }
+    .intro-title { font-size: 0.82rem; color: var(--gray-text); letter-spacing: 0.04em; margin-bottom: 2rem; }
 
-    /* ── INTRO ──────────────────────────────────────── */
-    #intro {
-      background: var(--gray-soft);
-      border-top: 1px solid var(--gray-line);
-      border-bottom: 1px solid var(--gray-line);
-    }
-
-    .intro-name {
-      font-family: var(--serif);
-      font-size: 1.45rem;
-      font-weight: 400;
-      color: var(--text-dark);
-      margin-bottom: 0.25rem;
-    }
-
-    .intro-title {
-      font-size: 0.82rem;
-      color: var(--gray-text);
-      letter-spacing: 0.04em;
-      margin-bottom: 2rem;
-    }
-
-    /* ── WHO THIS IS FOR ────────────────────────────── */
+    /* ── WHO ── */
     #who { background: var(--white); }
-
-    #who h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      margin-bottom: 2rem;
-    }
-
-    .check-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .check-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      font-size: 1rem;
-      color: var(--text-body);
-    }
-
+    #who h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 2rem; }
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .check-list li { display: flex; align-items: flex-start; gap: 1rem; font-size: 1rem; color: var(--text-body); }
     .check-list li::before {
       content: '';
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      margin-top: 3px;
-      border: 1.5px solid var(--slate-light);
-      border-radius: 50%;
+      flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px;
+      border: 1.5px solid var(--slate-light); border-radius: 50%;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%234A6080' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;
     }
 
-    /* ── PROCESS ────────────────────────────────────── */
-    #process {
-      background: var(--navy);
-      color: var(--white);
-    }
-
+    /* ── PROCESS ── */
+    #process { background: var(--navy); color: var(--white); }
     #process .section-label { color: rgba(255,255,255,0.45); }
-
-    #process h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      color: var(--white);
-      margin-bottom: 3rem;
-    }
-
+    #process h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; color: var(--white); margin-bottom: 3rem; }
     .steps { display: flex; flex-direction: column; gap: 0; }
-
-    .step {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 1.5rem;
-      align-items: start;
-      padding: 1.75rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
+    .step { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .step:last-child { border-bottom: none; }
+    .step-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; color: rgba(255,255,255,0.3); line-height: 1; padding-top: 2px; }
+    .step-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--white); margin-bottom: 0.35rem; }
+    .step-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
-    .step-num {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.3);
-      line-height: 1;
-      padding-top: 2px;
-    }
+    /* ── ADVISORS ── */
+    #advisors { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
+    #advisors h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 300; margin-bottom: 2rem; line-height: 1.25; }
+    .advisor-quote { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--slate); border-left: 2px solid var(--slate-light); padding-left: 1.5rem; line-height: 1.75; }
 
-    .step-title {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-    }
-
-    .step-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-    }
-
-    /* ── ADVISORS ───────────────────────────────────── */
-    #advisors {
-      background: var(--gray-soft);
-      border-top: 1px solid var(--gray-line);
-      border-bottom: 1px solid var(--gray-line);
-    }
-
-    #advisors h2 {
-      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-      font-weight: 300;
-      margin-bottom: 2rem;
-      line-height: 1.25;
-    }
-
-    .advisor-quote {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--slate);
-      border-left: 2px solid var(--slate-light);
-      padding-left: 1.5rem;
-      line-height: 1.75;
-    }
-
-    /* ── PROPERTIES GRID ────────────────────────────── */
-    #properties {
-      background: var(--white);
-      border-top: 1px solid var(--gray-line);
-    }
-
-    #properties h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      margin-bottom: 2.5rem;
-    }
-
-    .property-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-
+    /* ── PROPERTIES ── */
+    #properties { background: var(--white); border-top: 1px solid var(--gray-line); }
+    #properties h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 2.5rem; }
+    .property-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .property-card { display: flex; flex-direction: column; }
-
-    .property-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      background: var(--gray-soft);
-    }
-
-    .property-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
+    .property-img-wrap { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--gray-soft); }
+    .property-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
     .property-card:hover .property-img-wrap img { transform: scale(1.03); }
-
-    .property-badge {
-      position: absolute;
-      top: 0.75rem; left: 0.75rem;
-      background: var(--navy);
-      color: white;
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.65rem;
-    }
-
+    .property-badge { position: absolute; top: 0.75rem; left: 0.75rem; background: var(--navy); color: white; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.65rem; }
     .property-badge.contract { background: #7A6A4A; }
+    .property-caption { padding: 1rem 0 0; font-size: 0.88rem; color: var(--text-body); line-height: 1.65; }
+    .property-location { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; }
+    @media (max-width: 600px) { .property-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-    .property-caption {
-      padding: 1rem 0 0;
-      font-size: 0.88rem;
-      color: var(--text-body);
+    /* ── TESTIMONIAL ── */
+    #testimonial { background: var(--white); border-top: 1px solid var(--gray-line); }
+    .testimonial-context { font-size: 0.9rem; color: var(--gray-text); margin-bottom: 1.5rem; }
+    .testimonial-quote { font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.35rem); font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.75; margin-bottom: 1.5rem; quotes: none; }
+    .testimonial-attribution { font-size: 0.82rem; color: var(--gray-text); letter-spacing: 0.04em; }
+
+    /* ── RESOURCES ── */
+    #resources { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
+    #resources h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 0.75rem; }
+    .resources-intro {
+      font-size: 0.92rem;
+      color: var(--gray-text);
+      font-weight: 300;
+      margin-bottom: 2.25rem;
       line-height: 1.65;
     }
-
-    .property-location {
-      font-family: var(--serif);
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      margin-bottom: 0.3rem;
-    }
-
-    @media (max-width: 600px) {
-      .property-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-
-    /* ── TESTIMONIAL ────────────────────────────────── */
-    #testimonial {
-      background: var(--white);
-      border-top: 1px solid var(--gray-line);
-    }
-
-    .testimonial-context {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-      margin-bottom: 1.5rem;
-    }
-
-    .testimonial-quote {
-      font-family: var(--serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--text-dark);
-      line-height: 1.75;
-      margin-bottom: 1.5rem;
-      quotes: none;
-    }
-
-    .testimonial-attribution {
-      font-size: 0.82rem;
-      color: var(--gray-text);
-      letter-spacing: 0.04em;
-    }
-
-    /* ── RESOURCES ──────────────────────────────────── */
-    #resources {
-      background: var(--gray-soft);
-      border-top: 1px solid var(--gray-line);
-      border-bottom: 1px solid var(--gray-line);
-    }
-
-    #resources h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      margin-bottom: 2.5rem;
-    }
-
     .resource-card {
       display: flex;
       align-items: flex-start;
@@ -463,164 +274,42 @@
       text-decoration: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-
-    .resource-card:hover {
-      border-color: var(--slate-light);
-      box-shadow: 0 2px 16px rgba(44,62,90,0.07);
-    }
-
+    .resource-card:hover { border-color: var(--slate-light); box-shadow: 0 2px 16px rgba(44,62,90,0.07); }
     .resource-icon {
-      flex-shrink: 0;
-      width: 42px; height: 42px;
-      background: var(--gray-soft);
-      border: 1px solid var(--gray-line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-shrink: 0; width: 42px; height: 42px;
+      background: var(--gray-soft); border: 1px solid var(--gray-line);
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .resource-icon svg {
-      width: 18px; height: 18px;
-      stroke: var(--slate);
-      fill: none;
-      stroke-width: 1.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .resource-label {
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--slate-light);
-      margin-bottom: 0.3rem;
-    }
-
-    .resource-title {
-      font-family: var(--serif);
-      font-size: 1.12rem;
-      font-weight: 400;
-      color: var(--text-dark);
-      line-height: 1.3;
-      margin-bottom: 0.35rem;
-    }
-
-    .resource-desc {
-      font-size: 0.86rem;
-      color: var(--gray-text);
-      line-height: 1.65;
-    }
-
-    .resource-arrow {
-      margin-left: auto;
-      flex-shrink: 0;
-      align-self: center;
-      color: var(--slate-light);
-      font-size: 1.1rem;
-      transition: transform 0.2s;
-      padding-left: 1rem;
-    }
-
+    .resource-icon svg { width: 18px; height: 18px; stroke: var(--slate); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .resource-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 0.3rem; }
+    .resource-title { font-family: var(--serif); font-size: 1.12rem; font-weight: 400; color: var(--text-dark); line-height: 1.3; margin-bottom: 0.35rem; }
+    .resource-desc { font-size: 0.86rem; color: var(--gray-text); line-height: 1.65; margin-bottom: 0.75rem; }
+    .resource-cta { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .resource-card:hover .resource-cta { color: var(--navy); }
+    .resource-arrow { margin-left: auto; flex-shrink: 0; align-self: center; color: var(--slate-light); font-size: 1.1rem; transition: transform 0.2s; padding-left: 1rem; }
     .resource-card:hover .resource-arrow { transform: translateX(3px); }
 
-    /* ── DOWNLOAD ───────────────────────────────────── */
-    #download {
-      background: var(--white);
-      text-align: center;
-    }
+    /* ── DOWNLOAD ── */
+    #download { background: var(--white); text-align: center; }
+    #download h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 1rem; }
+    #download p { max-width: 480px; margin: 0 auto 2.5rem; color: var(--gray-text); }
 
-    #download h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
+    /* ── CONTACT ── */
+    #contact { background: var(--gray-soft); border-top: 1px solid var(--gray-line); }
+    #contact h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 0.75rem; }
+    #contact .sub { font-size: 0.95rem; color: var(--gray-text); margin-bottom: 2.5rem; }
+    .contact-details { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .contact-detail { font-size: 0.9rem; color: var(--slate); display: flex; align-items: center; gap: 0.6rem; }
+    .contact-detail svg { width: 14px; height: 14px; stroke: var(--slate-light); flex-shrink: 0; }
+    .contact-detail a { color: var(--slate); text-decoration: none; }
+    .contact-detail a:hover { color: var(--navy); text-decoration: underline; }
 
-    #download p {
-      max-width: 480px;
-      margin: 0 auto 2.5rem;
-      color: var(--gray-text);
-    }
-
-    /* ── CONTACT ────────────────────────────────────── */
-    #contact {
-      background: var(--gray-soft);
-      border-top: 1px solid var(--gray-line);
-    }
-
-    #contact h2 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      font-weight: 300;
-      margin-bottom: 0.75rem;
-    }
-
-    #contact .sub {
-      font-size: 0.95rem;
-      color: var(--gray-text);
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-details {
-      margin-top: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .contact-detail {
-      font-size: 0.9rem;
-      color: var(--slate);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .contact-detail svg {
-      width: 14px; height: 14px;
-      stroke: var(--slate-light);
-      flex-shrink: 0;
-    }
-
-    .contact-detail a {
-      color: var(--slate);
-      text-decoration: none;
-    }
-
-    .contact-detail a:hover {
-      color: var(--navy);
-      text-decoration: underline;
-    }
-
-    /* ── FOOTER ─────────────────────────────────────── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.55);
-      padding: 3.5rem 2rem;
-    }
-
+    /* ── FOOTER ── */
+    footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 3.5rem 2rem; }
     .footer-inner { max-width: 680px; margin: 0 auto; }
-
-    .footer-name {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 0.2rem;
-    }
-
-    .footer-role {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 2rem;
-    }
-
-    .footer-legal {
-      font-size: 0.78rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.4);
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 1.5rem;
-    }
-
+    .footer-name { font-family: var(--serif); font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 0.2rem; }
+    .footer-role { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 2rem; }
+    .footer-legal { font-size: 0.78rem; line-height: 1.75; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.12); padding-top: 1.5rem; }
     .footer-legal p + p { margin-top: 0.75rem; }
 
     @media (max-width: 540px) {
@@ -812,6 +501,7 @@
     <div class="inner">
       <p class="section-label">Resources</p>
       <h2>Guides &amp; Articles</h2>
+      <p class="resources-intro">Helpful guides and educational resources for families navigating inherited property decisions in Colorado.</p>
       <a href="/inherit-house-colorado" class="resource-card">
         <div class="resource-icon">
           <svg viewBox="0 0 24 24">
@@ -826,6 +516,7 @@
           <p class="resource-label">Colorado Guide</p>
           <p class="resource-title">What To Do When You Inherit a House in Colorado</p>
           <p class="resource-desc">A practical overview of probate, property condition, taxes, selling options, and coordinating the right professionals.</p>
+          <span class="resource-cta">Read the guide &rarr;</span>
         </div>
         <span class="resource-arrow">→</span>
       </a>

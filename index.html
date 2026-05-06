@@ -366,6 +366,84 @@
       line-height: 1.75;
     }
 
+    /* ── PROPERTIES GRID ────────────────────────────── */
+    #properties {
+      background: var(--white);
+      border-top: 1px solid var(--gray-line);
+    }
+
+    #properties h2 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+    }
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .property-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-img-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--gray-soft);
+    }
+
+    .property-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .property-card:hover .property-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .property-badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: var(--navy);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem;
+    }
+
+    .property-badge.contract {
+      background: #7A6A4A;
+    }
+
+    .property-caption {
+      padding: 1rem 0 0;
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    .property-location {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      .property-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
     /* ── TESTIMONIAL ────────────────────────────────── */
     #testimonial {
       background: var(--white);
@@ -618,6 +696,61 @@
         Inherited property often involves legal and financial considerations.<br><br>
         I do not provide legal, tax, or financial advice, but I can coordinate with your professional advisors to keep the real estate process moving clearly and efficiently.
       </blockquote>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section id="properties">
+    <div class="inner-wide">
+      <p class="section-label">Properties We've Navigated</p>
+      <h2>Real inherited properties.<br>Real situations.</h2>
+      <div class="property-grid">
+
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="property-1.jpg" alt="Inherited bungalow, sold as-is" loading="lazy" />
+            <span class="property-badge">Sold</span>
+          </div>
+          <div class="property-caption">
+            <p class="property-location">Bungalow · Wheat Ridge</p>
+            Inherited with significant deferred maintenance. We identified the right buyer and avoided unnecessary repairs — sold as-is.
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="property-2.jpg" alt="Historic Capitol Hill two-story, under contract" loading="lazy" />
+            <span class="property-badge contract">Under Contract</span>
+          </div>
+          <div class="property-caption">
+            <p class="property-location">Historic Two-Story · Capitol Hill</p>
+            Rather than selling cheap to an investor, we made strategic repairs to attract an owner-occupant buyer at a stronger price.
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="property-3.jpg" alt="Inherited ranch, West Denver" loading="lazy" />
+            <span class="property-badge">Sold</span>
+          </div>
+          <div class="property-caption">
+            <p class="property-location">Ranch · West Denver</p>
+            Inherited by siblings as co-heirs. Minimal prep, coordinated a clean process among all parties, and closed efficiently.
+          </div>
+        </div>
+
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="property-4.jpg" alt="Downtown Denver condo, dated finishes" loading="lazy" />
+            <span class="property-badge">Sold</span>
+          </div>
+          <div class="property-caption">
+            <p class="property-location">Downtown Condo · Larimer Street</p>
+            Dated finishes in a crowded market. Cleaned out, priced strategically, and sold to buyers who recognized the potential.
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 

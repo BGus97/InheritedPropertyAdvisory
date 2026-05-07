@@ -53,11 +53,13 @@
       --navy: #2C3E5A; --navy-light: #3D5275; --slate: #4A6080; --slate-light: #6B84A0;
       --gray-line: #E4E8ED; --gray-soft: #F5F6F8; --gray-text: #7A8899;
       --white: #FFFFFF; --text-dark: #1A2432; --text-body: #3A4A5C;
+      --gold: #8B7355;
       --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'DM Sans', system-ui, sans-serif;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--white); color: var(--text-body); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
+    /* ── NAV ── */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-line); padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--navy); letter-spacing: 0.02em; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -65,6 +67,7 @@
     .nav-links a:hover { color: var(--navy); }
     @media (max-width: 640px) { .nav-links { display: none; } }
 
+    /* ── SHARED ── */
     section { padding: 100px 2rem; }
     .inner { max-width: 680px; margin: 0 auto; }
     .inner-wide { max-width: 860px; margin: 0 auto; }
@@ -72,31 +75,38 @@
     h1, h2, h3 { font-family: var(--serif); color: var(--text-dark); line-height: 1.2; }
     p { font-size: 1.02rem; color: var(--text-body); line-height: 1.8; }
 
+    /* ── BUTTONS ── */
     .btn-primary { display: inline-block; padding: 0.85rem 2rem; background: var(--navy); color: var(--white); font-family: var(--sans); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--navy); transition: background 0.2s, color 0.2s; cursor: pointer; }
     .btn-primary:hover { background: var(--navy-light); border-color: var(--navy-light); }
     .btn-outline { display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--navy); font-family: var(--sans); font-size: 0.82rem; font-weight: 400; letter-spacing: 0.07em; text-transform: uppercase; text-decoration: none; border: 1.5px solid var(--navy); transition: background 0.2s, color 0.2s; cursor: pointer; }
     .btn-outline:hover { background: var(--navy); color: var(--white); }
     .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
 
+    /* ── HERO ── */
     #hero { padding-top: 80px; padding-bottom: 120px; background: var(--white); }
     .hero-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 1.5rem; }
     #hero h1 { font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 300; letter-spacing: -0.01em; color: var(--text-dark); margin-bottom: 1.25rem; }
     .hero-sub { font-family: var(--serif); font-size: clamp(1.2rem, 3vw, 1.55rem); font-weight: 300; font-style: italic; color: var(--slate); margin-bottom: 1rem; line-height: 1.4; }
     .hero-credit { font-size: 0.85rem; color: var(--gray-text); font-weight: 300; letter-spacing: 0.02em; }
+    .hero-download-note { margin-top: 1rem; font-size: 0.78rem; color: var(--gray-text); font-weight: 300; }
 
+    /* ── INTRO ── */
     #intro { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
     .intro-name { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--text-dark); margin-bottom: 0.25rem; }
     .intro-title { font-size: 0.82rem; color: var(--gray-text); letter-spacing: 0.04em; margin-bottom: 2rem; }
 
+    /* ── WHO ── */
     #who { background: var(--white); }
     #who h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 2rem; }
     .check-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
     .check-list li { display: flex; align-items: flex-start; gap: 1rem; font-size: 1rem; color: var(--text-body); }
     .check-list li::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; margin-top: 3px; border: 1.5px solid var(--slate-light); border-radius: 50%; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%234A6080' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat; }
 
+    /* ── PROCESS ── */
     #process { background: var(--navy); color: var(--white); }
     #process .section-label { color: rgba(255,255,255,0.45); }
-    #process h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; color: var(--white); margin-bottom: 3rem; }
+    #process h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; color: var(--white); margin-bottom: 0.5rem; }
+    .process-sub { font-family: var(--serif); font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.5); margin-bottom: 3rem; font-weight: 300; }
     .steps { display: flex; flex-direction: column; gap: 0; }
     .step { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; align-items: start; padding: 1.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .step:last-child { border-bottom: none; }
@@ -104,10 +114,40 @@
     .step-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--white); margin-bottom: 0.35rem; }
     .step-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
+    /* Estate Exit Plan callout within process section */
+    .eep-callout {
+      margin-top: 3rem;
+      padding: 1.75rem 2rem;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+    }
+    .eep-callout-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.5rem;
+    }
+    .eep-callout-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.5rem;
+    }
+    .eep-callout-body {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ── ADVISORS ── */
     #advisors { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
     #advisors h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 300; margin-bottom: 2rem; line-height: 1.25; }
     .advisor-quote { font-family: var(--serif); font-size: 1.15rem; font-style: italic; color: var(--slate); border-left: 2px solid var(--slate-light); padding-left: 1.5rem; line-height: 1.75; }
 
+    /* ── PROPERTIES ── */
     #properties { background: var(--white); border-top: 1px solid var(--gray-line); }
     #properties h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 2.5rem; }
     .property-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -121,11 +161,13 @@
     .property-location { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--text-dark); margin-bottom: 0.3rem; }
     @media (max-width: 600px) { .property-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
 
+    /* ── TESTIMONIAL ── */
     #testimonial { background: var(--white); border-top: 1px solid var(--gray-line); }
     .testimonial-context { font-size: 0.9rem; color: var(--gray-text); margin-bottom: 1.5rem; }
     .testimonial-quote { font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.35rem); font-weight: 300; font-style: italic; color: var(--text-dark); line-height: 1.75; margin-bottom: 1.5rem; quotes: none; }
     .testimonial-attribution { font-size: 0.82rem; color: var(--gray-text); letter-spacing: 0.04em; }
 
+    /* ── RESOURCES ── */
     #resources { background: var(--gray-soft); border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
     #resources h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 0.75rem; }
     .resources-intro { font-size: 0.92rem; color: var(--gray-text); font-weight: 300; margin-bottom: 2.25rem; line-height: 1.65; }
@@ -144,10 +186,20 @@
     .resource-card:hover .resource-arrow { transform: translateX(3px); }
     @media (max-width: 540px) { .resource-card { flex-wrap: wrap; gap: 1rem; } .resource-arrow { display: none; } }
 
-    #download { background: var(--white); text-align: center; }
-    #download h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 1rem; }
-    #download p { max-width: 480px; margin: 0 auto 2.5rem; color: var(--gray-text); }
+    /* ── DOWNLOAD — checklist focused ── */
+    #download { background: var(--white); }
+    #download .inner-wide { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .download-left h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 0.75rem; }
+    .download-left p { color: var(--gray-text); margin-bottom: 2rem; font-size: 0.95rem; line-height: 1.75; }
+    .download-meta { margin-top: 1rem; font-size: 0.78rem; color: var(--gray-text); font-weight: 300; }
+    .download-right { background: var(--gray-soft); border: 1px solid var(--gray-line); padding: 2rem; }
+    .download-right-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-light); margin-bottom: 1rem; }
+    .checklist-preview { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0; }
+    .checklist-preview li { font-size: 0.85rem; color: var(--slate); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+    .checklist-preview li::before { content: ''; flex-shrink: 0; width: 14px; height: 14px; margin-top: 2px; border: 1px solid var(--slate-light); border-radius: 2px; }
+    @media (max-width: 680px) { #download .inner-wide { grid-template-columns: 1fr; gap: 2.5rem; } }
 
+    /* ── CONTACT ── */
     #contact { background: var(--gray-soft); border-top: 1px solid var(--gray-line); }
     #contact h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 300; margin-bottom: 0.75rem; }
     #contact .sub { font-size: 0.95rem; color: var(--gray-text); margin-bottom: 2.5rem; }
@@ -157,6 +209,7 @@
     .contact-detail a { color: var(--slate); text-decoration: none; }
     .contact-detail a:hover { color: var(--navy); text-decoration: underline; }
 
+    /* ── FOOTER ── */
     footer { background: var(--navy); color: rgba(255,255,255,0.55); padding: 3.5rem 2rem; }
     .footer-inner { max-width: 680px; margin: 0 auto; }
     .footer-name { font-family: var(--serif); font-size: 1.05rem; color: rgba(255,255,255,0.85); margin-bottom: 0.2rem; }
@@ -184,11 +237,11 @@
     </ul>
   </nav>
 
-  <!-- DORA: Brokerage identification with Brendan's name -->
   <div style="margin-top:64px; background:var(--gray-soft); border-bottom:1px solid var(--gray-line); text-align:center; padding:6px 1rem; font-size:0.68rem; letter-spacing:0.05em; color:var(--gray-text); font-family:var(--sans);">
     Real estate services provided by Brendan Gustafson, Broker Associate with Kentwood Real Estate City Properties
   </div>
 
+  <!-- HERO — checklist as primary CTA -->
   <section id="hero">
     <div class="inner">
       <p class="hero-eyebrow">A real estate advisory for inherited property</p>
@@ -196,22 +249,24 @@
       <p class="hero-sub">Clarity and execution for families navigating inherited property in Colorado.</p>
       <p class="hero-credit">Brendan Gustafson, Broker Associate &nbsp;·&nbsp; Kentwood Real Estate City Properties</p>
       <div class="btn-group">
-        <a href="#download" class="btn-primary">Download the Estate Exit Plan</a>
+        <a href="/colorado-inherited-house-checklist.pdf" class="btn-primary">Download the Colorado Checklist</a>
         <a href="mailto:bgustafson@kentwood.com?subject=Inherited%20Property%20Advisory%20Consultation" class="btn-outline">Schedule a Call</a>
       </div>
+      <p class="hero-download-note">Free 17-step guide for families navigating inherited property decisions in Colorado.</p>
     </div>
   </section>
 
+  <!-- INTRO -->
   <section id="intro">
     <div class="inner">
       <p class="section-label">About</p>
       <p class="intro-name">Brendan Gustafson</p>
       <p class="intro-title">Broker Associate &nbsp;|&nbsp; Kentwood Real Estate City Properties</p>
-      <!-- DORA: Removed "I specialize in" — replaced with experience-based, real-estate-scoped language -->
       <p>I work with families navigating inherited property — providing clear real estate guidance and helping execute the right plan from start to finish. I do not provide legal, tax, or financial advice, and I coordinate with your attorney, CPA, or financial advisor as needed.</p>
     </div>
   </section>
 
+  <!-- WHO THIS IS FOR -->
   <section id="who">
     <div class="inner">
       <p class="section-label">Who This Is For</p>
@@ -226,25 +281,64 @@
     </div>
   </section>
 
+  <!-- PROCESS — Estate Exit Plan lives here as methodology -->
   <section id="process">
     <div class="inner">
-      <p class="section-label">The Process</p>
+      <p class="section-label">The Advisory Process</p>
       <h2>The Estate Exit Plan</h2>
+      <p class="process-sub">A structured approach to every inherited property situation.</p>
       <div class="steps">
-        <div class="step"><div class="step-num">01</div><div><p class="step-title">Clarify the Situation</p><p class="step-desc">Understand the real estate situation, decision-makers, property status, and goals of all parties involved.</p></div></div>
-        <div class="step"><div class="step-num">02</div><div><p class="step-title">Evaluate the Property</p><p class="step-desc">Assess condition, market positioning, and what—if any—preparation makes sense before a sale.</p></div></div>
-        <div class="step"><div class="step-num">03</div><div><p class="step-title">Compare Your Options</p><p class="step-desc">Review realistic real estate paths: traditional sale, as-is sale, investor offer, or preparing the home before listing.</p></div></div>
-        <div class="step"><div class="step-num">04</div><div><p class="step-title">Build the Strategy</p><p class="step-desc">Align on the best approach given timing, condition, market conditions, and stakeholder priorities.</p></div></div>
-        <div class="step"><div class="step-num">05</div><div><p class="step-title">Execute the Sale</p><p class="step-desc">Handle all details of the transaction — from listing or off-market sale through a clean closing.</p></div></div>
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <p class="step-title">Clarify the Situation</p>
+            <p class="step-desc">Understand the real estate situation, decision-makers, property status, and goals of all parties involved.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <p class="step-title">Evaluate the Property</p>
+            <p class="step-desc">Assess condition, market positioning, and what — if any — preparation makes sense before a sale.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <p class="step-title">Compare Your Options</p>
+            <p class="step-desc">Review realistic real estate paths: traditional sale, as-is sale, investor offer, or preparing the home before listing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <p class="step-title">Build the Strategy</p>
+            <p class="step-desc">Align on the best approach given timing, condition, market conditions, and stakeholder priorities.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <div>
+            <p class="step-title">Execute the Sale</p>
+            <p class="step-desc">Handle all details of the transaction — from listing or off-market sale through a clean closing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estate Exit Plan positioned as advisory methodology, not download -->
+      <div class="eep-callout">
+        <p class="eep-callout-label">Advisory Framework</p>
+        <p class="eep-callout-title">What is the Estate Exit Plan?</p>
+        <p class="eep-callout-body">The Estate Exit Plan is the advisory framework I use to guide families through inherited property decisions — from initial evaluation through closing. It's not a checklist. It's a coordinated strategy built around your specific property, timeline, and goals. <a href="mailto:bgustafson@kentwood.com?subject=Estate%20Exit%20Plan%20Inquiry" style="color:rgba(255,255,255,0.6); text-decoration:underline;">Schedule a consultation to discuss yours.</a></p>
       </div>
     </div>
   </section>
 
+  <!-- ADVISORS -->
   <section id="advisors">
     <div class="inner">
       <p class="section-label">Working with Advisors</p>
       <h2>Working alongside your attorney and CPA</h2>
-      <!-- DORA: Collaborative language reinforced, scope clearly limited to real estate -->
       <blockquote class="advisor-quote">
         Inherited property often involves legal, tax, and financial considerations that go beyond real estate.<br><br>
         I stay focused on the real estate side — and coordinate directly with your attorney, CPA, or financial advisor to keep the process moving clearly and efficiently.
@@ -252,6 +346,7 @@
     </div>
   </section>
 
+  <!-- PROPERTIES -->
   <section id="properties">
     <div class="inner-wide">
       <p class="section-label">Properties We've Navigated</p>
@@ -277,6 +372,7 @@
     </div>
   </section>
 
+  <!-- TESTIMONIAL -->
   <section id="testimonial">
     <div class="inner">
       <p class="section-label">Client Experience</p>
@@ -286,6 +382,7 @@
     </div>
   </section>
 
+  <!-- RESOURCES -->
   <section id="resources">
     <div class="inner">
       <p class="section-label">Resources</p>
@@ -336,21 +433,35 @@
     </div>
   </section>
 
+  <!-- DOWNLOAD — checklist focused, two-column layout -->
   <section id="download">
     <div class="inner-wide">
-      <p class="section-label" style="text-align:center;">Free Resource</p>
-      <h2>Get the Estate Exit Plan</h2>
-      <p>A simple guide to help you understand your real estate options and move forward with confidence.</p>
-      <a href="/estate-exit-plan.pdf" class="btn-primary">Download the Guide</a>
-      <p style="margin-top:1.25rem; font-size:0.82rem; color:var(--gray-text);">For informational purposes. Not legal, tax, or financial advice.</p>
+      <div class="download-left">
+        <p class="section-label">Free Download</p>
+        <h2>Colorado Inherited House Checklist</h2>
+        <p>17 steps to take before selling, renting, renovating, or transferring an inherited property. A practical resource for Colorado families navigating the real estate side of an inherited property decision.</p>
+        <a href="/colorado-inherited-house-checklist.pdf" class="btn-primary">Download the Free Checklist</a>
+        <p class="download-meta">For informational purposes only. Not legal, tax, or financial advice.</p>
+      </div>
+      <div class="download-right">
+        <p class="download-right-label">What's Inside</p>
+        <ul class="checklist-preview">
+          <li>Secure &amp; stabilize the property</li>
+          <li>Understand ownership, title &amp; probate</li>
+          <li>Evaluate the property condition</li>
+          <li>Sell, rent, or renovate — decision matrix</li>
+          <li>Common mistakes to avoid</li>
+          <li>Build your Estate Exit Plan framework</li>
+        </ul>
+      </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact">
     <div class="inner">
       <p class="section-label">Get in Touch</p>
       <h2>Need real estate guidance on an inherited property?</h2>
-      <!-- DORA: CTA clearly scoped to real estate guidance -->
       <p class="sub">Talk through the real estate side of your situation with Brendan Gustafson, Broker Associate with Kentwood Real Estate City Properties.</p>
       <a href="mailto:bgustafson@kentwood.com?subject=Inherited%20Property%20Advisory%20Consultation" class="btn-primary">Schedule a Call</a>
       <div class="contact-details">
@@ -366,10 +477,10 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <img src="logo-white.png" alt="Brendan Gustafson | Kentwood Real Estate City Properties" style="height:48px; width:auto; display:block; margin-bottom:1.75rem; opacity:0.9;" />
-      <!-- DORA: Full brokerage identification with Brendan's name -->
       <p class="footer-name">Brendan Gustafson</p>
       <p class="footer-role">Broker Associate &nbsp;|&nbsp; Kentwood Real Estate City Properties</p>
       <div class="footer-legal">
